@@ -1,0 +1,16 @@
+<h2>Hasil Pencarian:</h2>
+
+{% if results %}
+  <ul style="list-style-type: none; padding: 0;">
+    {% for item in results %}
+      <li style="margin-bottom: 10px; padding: 10px; border: 1px solid #ccc; border-radius: 8px;">
+        <a href="{{ item.url }}" style="text-decoration: none; font-weight: bold; color: #007BFF;">
+          {{ item.judul }}
+        </a>
+        <span style="float: right; color: #555;">Skor: {{ item.score }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>Tidak ditemukan hasil untuk pencarianmu.</p>
+{% endif %}
